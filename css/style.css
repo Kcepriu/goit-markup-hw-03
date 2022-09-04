@@ -12,6 +12,8 @@
   --primary-color-background: #ffffff;
   --second-color-background: #f5f4fa;
   --dark-color-background: #2f303a;
+  --border-header-color: #ececec;
+  --border-portfolio-border: #eeeeee;
 }
 
 /* Global */
@@ -22,7 +24,22 @@ body {
   color: var(--primary-text-color);
 }
 
+h1,
+h2,
+h3,
+h4,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .list {
+  padding: 0;
+  margin: 0;
+
   list-style: none;
 }
 
@@ -30,9 +47,27 @@ body {
   text-decoration: none;
 }
 
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 1200px;
+
+  outline: 2px solid tomato;
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
 /* Header */
-.header {
+.header-page {
   background-color: var(--primary-white-color);
+  border-bottom: 1px solid var(--border-header-color);
 }
 
 /* Logo */
@@ -43,11 +78,14 @@ body {
   line-height: 1.19;
 }
 
-.header .logo {
+.header-page .logo {
   color: var(--logo-header-color);
 }
 
-.footer .logo {
+.footer-page .logo {
+  margin-bottom: 20px;
+  display: inline-block;
+
   color: var(--primary-white-color);
 }
 
@@ -85,20 +123,26 @@ body {
 
 /* Hero section*/
 .hero {
+  text-align: center;
+
   letter-spacing: 0.06em;
   background-color: var(--dark-color-background);
 }
 
 .hero-title {
+  margin-top: 0;
+  margin-bottom: 30px;
+
   color: var(--primary-white-color);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
   text-transform: uppercase;
 }
 
 .hero .button {
+  padding: 10px 32px;
+
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
@@ -106,6 +150,8 @@ body {
 
 /* Title section */
 .section-title {
+  margin-bottom: 50px;
+
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 36px;
@@ -120,11 +166,15 @@ body {
 }
 
 .benefits .title {
+  margin-bottom: 10px;
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
+}
+.section.benefits {
+  padding-bottom: 0;
 }
 
 /* Team  section*/
@@ -135,6 +185,7 @@ body {
 }
 
 .team .title {
+  margin-bottom: 10px;
   color: var(--title-text-color);
   /* font-size - не наслідує з попереднього. Чомусь перекриває h3 таблиці стлів користувача */
   font-size: 16px;
@@ -142,8 +193,21 @@ body {
   font-weight: 500;
 }
 .team .card {
+  /* padding-bottom:  */
+  /* text-align: center; */
+
   background-color: var(--primary-color-background);
 }
+.card .caption {
+  padding: 30px auto;
+  /* padding: 30px auto; */
+}
+
+/* .card > .link {
+  margin-bottom: 30px;
+
+  display: inline-block;
+} */
 
 /* Portfolio section*/
 .portfolio {
@@ -162,30 +226,58 @@ body {
 .portfolio .link:visited {
   color: inherit;
 }
+.portfolio .link {
+  /* padding-bottom: 20px; */
+  /* display: inline-block; */
+}
+.portfolio .img {
+  margin: 0;
+  /* margin-bottom: 20px; */
+  /* display: inline-block; */
+  /* border: 1px solid red; */
+}
+
+.portfolio-filter {
+  margin-bottom: 50px;
+}
+.portfolio .caption {
+  padding: 20px 24px;
+  margin: 0;
+
+  border-left: 1px solid var(--border-portfolio-border);
+  border-right: 1px solid var(--border-portfolio-border);
+  border-bottom: 1px solid var(--border-portfolio-border);
+}
 
 /* Footer */
-.footer {
+.footer-page {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
   background-color: var(--dark-color-background);
 }
 
-.footer .address {
+.footer-page .address {
   color: var(--footer-text-color);
   font-size: 14px;
   line-height: 1.71;
   font-style: normal;
 }
 
-.footer .address.address-map {
+.footer-page .address.address-map {
   color: var(--primary-white-color);
 }
 
-.footer .address:hover,
-.footer .address:focus {
+.footer-page .address:hover,
+.footer-page .address:focus {
   color: var(--accent-color);
 }
 
 /* Button */
 .button {
+  min-width: 73px;
+  padding: 6px 22px;
+
   color: var(--title-text-color);
 
   font-weight: 500;
