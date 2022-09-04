@@ -70,6 +70,10 @@ p {
   border-bottom: 1px solid var(--border-header-color);
 }
 
+/* TODO не дозволяли використовувати імʼя тега. Переробити на класи */
+img {
+  display: block;
+}
 /* Logo */
 .logo {
   font-family: raleway, sans-serif;
@@ -193,21 +197,12 @@ p {
   font-weight: 500;
 }
 .team .card {
-  /* padding-bottom:  */
-  /* text-align: center; */
-
   background-color: var(--primary-color-background);
 }
 .card .caption {
-  padding: 30px auto;
-  /* padding: 30px auto; */
+  /* TODO написати лівий і правий паддінг */
+  padding: 30px;
 }
-
-/* .card > .link {
-  margin-bottom: 30px;
-
-  display: inline-block;
-} */
 
 /* Portfolio section*/
 .portfolio {
@@ -225,16 +220,6 @@ p {
 
 .portfolio .link:visited {
   color: inherit;
-}
-.portfolio .link {
-  /* padding-bottom: 20px; */
-  /* display: inline-block; */
-}
-.portfolio .img {
-  margin: 0;
-  /* margin-bottom: 20px; */
-  /* display: inline-block; */
-  /* border: 1px solid red; */
 }
 
 .portfolio-filter {
