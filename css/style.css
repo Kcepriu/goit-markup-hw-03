@@ -14,6 +14,9 @@
   --dark-color-background: #2f303a;
   --border-header-color: #ececec;
   --border-portfolio-border: #eeeeee;
+
+  --items: 3;
+  --indent: 30px;
 }
 
 /* Global */
@@ -64,16 +67,11 @@ p {
   padding-bottom: 94px;
 }
 
-/* Header */
-.header-page {
-  background-color: var(--primary-white-color);
-  border-bottom: 1px solid var(--border-header-color);
-}
-
 /* TODO не дозволяли використовувати імʼя тега. Переробити на класи */
 img {
   display: block;
 }
+
 /* Logo */
 .logo {
   font-family: raleway, sans-serif;
@@ -84,6 +82,7 @@ img {
 
 .header-page .logo {
   color: var(--logo-header-color);
+  margin-right: 93px;
 }
 
 .footer-page .logo {
@@ -97,16 +96,42 @@ img {
   color: var(--accent-color);
 }
 
+/* Section Header */
+.header-page {
+  background-color: var(--primary-white-color);
+  border-bottom: 1px solid var(--border-header-color);
+}
+
+.header-page .main-nav {
+  display: flex;
+  align-items: center;
+}
+
 /* Site nav */
 .site-nav,
 .auth-nav {
+  display: flex;
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
 
+.auth-nav {
+  margin-left: auto;
+}
+
+.site-nav .item + .item,
+.auth-nav .item + .item {
+  margin-left: 50px;
+}
+
 .site-nav .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--title-text-color);
 }
 
@@ -122,6 +147,10 @@ img {
 }
 
 .auth-nav .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: inherit;
 }
 
@@ -135,7 +164,7 @@ img {
 
 .hero-title {
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: var(--indent);
 
   color: var(--primary-white-color);
   font-weight: 900;
@@ -165,8 +194,14 @@ img {
 
 /* Benefits section*/
 .benefits {
+  display: flex;
+
   font-size: 14px;
   line-height: 1.71;
+}
+
+.benefits .item + .item {
+  margin-left: var(--indent);
 }
 
 .benefits .title {
@@ -177,11 +212,28 @@ img {
   line-height: 1.14;
   text-transform: uppercase;
 }
-.section.benefits {
+
+.section.benefit {
   padding-bottom: 0;
 }
 
+/* Section What to do */
+.what-to-do {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Здається це зайве. Попередній пункт все виставив вірно */
+/* .what-to-do .item + .item {
+  margin-left: var(--indent);
+} */
+
 /* Team  section*/
+.teams {
+  display: flex;
+  justify-content: space-between;
+}
+
 .team {
   font-size: 16px;
   line-height: 1.19;
@@ -196,18 +248,29 @@ img {
   line-height: 1.19;
   font-weight: 500;
 }
-.team .card {
+
+.team .item {
   background-color: var(--primary-color-background);
 }
-.card .caption {
-  /* TODO написати лівий і правий паддінг */
-  padding: 30px;
+
+.item .caption {
+  padding-top: var(--indent);
+  padding-bottom: var(--indent);
+  text-align: center;
 }
 
 /* Portfolio section*/
 .portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--indent);
+
   font-size: 16px;
   line-height: 1.88;
+}
+
+.portfolio .item {
+  flex-basis: calc((100% - (var(--items) - 1) * var(--indent)) / var(--items));
 }
 
 .portfolio .title {
@@ -223,8 +286,14 @@ img {
 }
 
 .portfolio-filter {
+  display: flex;
+  justify-content: center;
+
+  gap: 8px;
+
   margin-bottom: 50px;
 }
+
 .portfolio .caption {
   padding: 20px 24px;
   margin: 0;
