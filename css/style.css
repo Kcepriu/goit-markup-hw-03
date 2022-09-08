@@ -40,7 +40,10 @@ p {
   margin-bottom: 0;
 }
 
-/* TODO не дозволяли використовувати імʼя тега. Переробити на класи */
+/* * {
+  outline: 1px solid red;
+} */
+
 img {
   display: block;
   max-width: 100%;
@@ -193,6 +196,10 @@ img {
 }
 
 /* Benefits section*/
+.section.benefit {
+  padding-bottom: 47px;
+}
+
 .benefits {
   display: flex;
 
@@ -213,11 +220,11 @@ img {
   text-transform: uppercase;
 }
 
-.section.benefit {
-  padding-bottom: 0;
+/* Section What to do */
+.what {
+  padding-top: 47px;
 }
 
-/* Section What to do */
 .what-to-do {
   display: flex;
   justify-content: space-between;
