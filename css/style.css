@@ -75,6 +75,19 @@ img {
   padding-bottom: 94px;
 }
 
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
 /* Logo */
 .logo {
   font-family: raleway, sans-serif;
@@ -163,6 +176,12 @@ img {
 
   letter-spacing: 0.06em;
   background-color: var(--dark-color-background);
+}
+
+.hero-content {
+  display: inline-block;
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 
 .hero-title {
